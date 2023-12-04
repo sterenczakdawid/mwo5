@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/styles.css}">
+</head>
+<body>
+
+<h2 class="text-black text-center mt-10">Filmy</h2>
+<div class="container">
+<table class = "table" id="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Tytuł</th>
+    <th scope="col">Premiera</th>
+    <th scope="col">Akcje</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="movie : ${list}">
+    <td th:text="${movie.id}">Id Piwa</td>
+    <td th:text="${movie.title}">Nazwa Piwa</td>
+    <td th:text="${movie.release}">0.00</td>
+    <td>
+        <a th:href="@{'/api/v1/movies/delete/' + ${movie.id}}">Usuń</a>
+        <a th:href="@{'/api/v1/movies/update/' + ${movie.id}}">Edytuj</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+<a th:href="@{'add'}" class="btn btn-primary">Dodaj film</a>
+</div>
+</body>
+</html>
