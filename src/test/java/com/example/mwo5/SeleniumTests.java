@@ -60,7 +60,7 @@ public class SeleniumTests {
 
     @Test
     public void shouldFail(){
-        Assertions.assertEquals(1,1);
+        Assertions.assertEquals(10,10);
     }
 
 //    @Test
