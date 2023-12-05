@@ -26,7 +26,6 @@ public class SeleniumTests {
 
     public WebDriver driver;
 
-    public WebDriver driver;
 
     @Before
     public void startBrowser() {
