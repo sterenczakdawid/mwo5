@@ -13,8 +13,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 import java.util.List;
 
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@SpringBootTest
 public class SeleniumTests {
 
     WebDriver driver;
