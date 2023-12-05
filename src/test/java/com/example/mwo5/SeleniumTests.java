@@ -1,5 +1,7 @@
 package com.example.mwo5;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.*;
@@ -8,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,20 +24,39 @@ import java.util.List;
 //@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class SeleniumTests {
 
-    WebDriver driver;
+    public WebDriver driver;
 
-    @BeforeAll
-    static void setupAll() {
-//        WebDriverManager.chromedriver().setup();
-//        l
-        System.setProperty("webdriver.gecko.driver","C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\");
-    }
-    @BeforeEach
-    void setup() {
+    public WebDriver driver;
+
+    @Before
+    public void startBrowser() {
+        System.setProperty("webdriver.gecko.driver", "\"C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe\"");
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-        driver.get("http://localhost:8080/api/v1/movies/all");
+
     }
+
+    @Test
+    public void navigateToUrl() {
+        driver.get("http://demo.guru99.com/selenium/guru99home/");
+    }
+
+    @After
+    public void endTest() {
+        driver.quit();
+    }
+
+//    @BeforeAll
+//    static void setupAll() {
+////        WebDriverManager.chromedriver().setup();
+////        l
+//        System.setProperty("webdriver.gecko.driver","\"C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe\"");
+//    }
+//    @BeforeEach
+//    void setup() {
+//        driver = new FirefoxDriver();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+//        driver.get("http://localhost:8080/api/v1/movies/all");
+//    }
 
 //    @AfterEach
 //    void teardown() {
@@ -54,10 +76,10 @@ public class SeleniumTests {
 //        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 //    }
 
-    @Test
-    public void shouldFail(){
-        Assertions.assertEquals(1,1);
-    }
+//    @Test
+//    public void shouldFail(){
+//        Assertions.assertEquals(1,1);
+//    }
 
 //    @Test
 //    public void shouldGetMoviesList() {
@@ -129,10 +151,10 @@ public class SeleniumTests {
 //        Assertions.assertNotEquals(lastMovieDetails, updatedMovieDetails);
 //    }
 
-    @AfterEach
-    public void teardown() {
-        driver.quit();
-    }
+//    @AfterEach
+//    public void teardown() {
+//        driver.quit();
+//    }
 
 
 
