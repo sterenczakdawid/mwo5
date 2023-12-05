@@ -27,9 +27,9 @@ public class SeleniumTests {
     public WebDriver driver;
 
 
-    @BeforeEach
+    @Before
     public void startBrowser() {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe");
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
     }
 
