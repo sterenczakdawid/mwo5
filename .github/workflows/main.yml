@@ -17,6 +17,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - name: Display ChromeDriver Version
+        run: google-chrome --version
+      - name: Display Chrome Version
+        run: chromedriver --version
+
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
