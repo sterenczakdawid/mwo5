@@ -8,6 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Mwo5Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Mwo5Application.class, args).getBean(DataConfig.class).initData();
+		SpringApplication.run(Mwo5Application.class, args);
 	}
 }

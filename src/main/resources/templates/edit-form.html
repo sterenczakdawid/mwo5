@@ -15,7 +15,7 @@
     <label for="release" class="form-label">Rok premiery: </label>
     <input type="number" id="release" name="release" th:field="*{release}" required="required" class="form-control" />
     <br/>
-    <button type="submit" class="btn btn-primary">Zatwierdź</button>
+    <button type="submit" class="btn btn-primary update-movie-button">Zatwierdź</button>
 </form>
 <br/>
 <a th:href="@{'/api/v1/movies/all'}" class="btn btn-secondary">Powrót</a>

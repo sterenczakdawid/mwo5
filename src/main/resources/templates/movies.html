@@ -10,7 +10,7 @@
 
 <h2 class="text-black text-center mt-10">Filmy</h2>
 <div class="container">
-<table class = "table" id="table">
+<table class = "table">
   <thead>
   <tr>
     <th scope="col">Id</th>
@@ -26,8 +26,8 @@
     <td th:text="${movie.title}">Nazwa Piwa</td>
     <td th:text="${movie.release}">0.00</td>
     <td>
-        <a th:href="@{'/api/v1/movies/delete/' + ${movie.id}}">Usuń</a>
-        <a th:href="@{'/api/v1/movies/update/' + ${movie.id}}">Edytuj</a>
+        <a th:href="@{'/api/v1/movies/delete/' + ${movie.id}}" class="delete-button">Usuń</a>
+        <a th:href="@{'/api/v1/movies/update/' + ${movie.id}}" class="update-button">Edytuj</a>
     </td>
   </tr>
   </tbody>
