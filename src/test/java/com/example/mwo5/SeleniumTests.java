@@ -26,7 +26,7 @@ public class SeleniumTests {
     @BeforeAll
     static void setupAll() {
 //        WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.gecko.driver","C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64");
+        System.setProperty("webdriver.gecko.driver","C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe");
     }
     @BeforeEach
     void setup() {
