@@ -39,10 +39,6 @@ public class SeleniumTests {
 //        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
     }
 
-//    @Test
-//    public void navigateToUrl() {
-//        driver.get("http://demo.guru99.com/selenium/guru99home/");
-//    }
 
     @AfterEach
     void teardown() {
@@ -62,10 +58,10 @@ public class SeleniumTests {
 //        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 //    }
 
-//    @Test
-//    public void shouldFail(){
-//        Assertions.assertEquals(1,1);
-//    }
+    @Test
+    public void shouldFail(){
+        Assertions.assertEquals(1,1);
+    }
 
 //    @Test
 //    public void shouldGetMoviesList() {
