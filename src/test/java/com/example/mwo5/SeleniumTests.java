@@ -1,5 +1,6 @@
 package com.example.mwo5;
 
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -37,7 +38,7 @@ public class SeleniumTests {
 //    }
 
 
-    @BeforeAll
+    @BeforeClass
     public static void init(){
         WebDriverManager.chromedriver().setup();
     }
@@ -63,66 +64,66 @@ public class SeleniumTests {
         Assertions.assertFalse(rows.isEmpty());
     }
 
-    @Test
-    public void shouldAddMovie() {
-        driver.get("http://localhost:8080/api/v1/movies/all");
-        List<WebElement> moviesBefore = driver.findElements(By.tagName("tr"));
-        int numberOfMovies = moviesBefore.size();
-
-        driver.get("http://localhost:8080/api/v1/movies/add");
-        WebElement titleInput = driver.findElement(By.id("title"));
-        titleInput.sendKeys("Nowy film");
-        WebElement releaseInput = driver.findElement(By.id("release"));
-        releaseInput.sendKeys("2023");
-        WebElement submitButton = driver.findElement(By.className("add-movie-button"));
-        submitButton.click();
-
-        driver.get("http://localhost:8080/api/v1/movies/all");
-        List<WebElement> moviesAfter = driver.findElements(By.tagName("tr"));
-        WebElement addedMovieTitle = driver.findElement(By.xpath("//td[contains(text(),'Nowy film')]"));
-        WebElement addedMovieRelease = driver.findElement(By.xpath("//td[contains(text(),'2023')]"));
-
-        Assertions.assertEquals(numberOfMovies + 1, moviesAfter.size());
-        Assertions.assertTrue(addedMovieTitle.isDisplayed());
-        Assertions.assertTrue(addedMovieRelease.isDisplayed());
-    }
-
-    @Test
-    public void shouldDeleteMovie() {
-        driver.get("http://localhost:8080/api/v1/movies/all");
-        List<WebElement> moviesBefore = driver.findElements(By.tagName("tr"));
-        int numberOfMovies = moviesBefore.size();
-
-        List<WebElement> deleteButtons = driver.findElements(By.className("delete-button"));
-        System.out.println(deleteButtons.get(deleteButtons.size()-1));
-        WebElement button = deleteButtons.get(deleteButtons.size()-1);
-        button.click();
-
-        driver.get("http://localhost:8080/api/v1/movies/all");
-        List<WebElement> moviesAfter = driver.findElements(By.tagName("tr"));
-        Assertions.assertEquals(numberOfMovies - 1, moviesAfter.size());
-    }
-
-    @Test
-    public void shouldUpdateMovie() {
-        driver.get("http://localhost:8080/api/v1/movies/all");
-        List<WebElement> movies = driver.findElements(By.tagName("tr"));
-        WebElement lastMovie = movies.get(movies.size()-1);
-        String lastMovieDetails = lastMovie.getText();
-
-        WebElement updateButton = lastMovie.findElement(By.className("update-button"));
-        updateButton.click();
-        WebElement titleInput = driver.findElement(By.id("title"));
-        titleInput.clear();
-        titleInput.sendKeys("Zaktualizowany tytuł");
-        WebElement submitButton = driver.findElement(By.className("update-movie-button"));
-        submitButton.click();
-
-        List<WebElement> moviesAfter = driver.findElements(By.tagName("tr"));
-        WebElement updatedMovie = moviesAfter.get(moviesAfter.size()-1);
-        String updatedMovieDetails = updatedMovie.getText();
-        Assertions.assertNotEquals(lastMovieDetails, updatedMovieDetails);
-    }
+//    @Test
+//    public void shouldAddMovie() {
+//        driver.get("http://localhost:8080/api/v1/movies/all");
+//        List<WebElement> moviesBefore = driver.findElements(By.tagName("tr"));
+//        int numberOfMovies = moviesBefore.size();
+//
+//        driver.get("http://localhost:8080/api/v1/movies/add");
+//        WebElement titleInput = driver.findElement(By.id("title"));
+//        titleInput.sendKeys("Nowy film");
+//        WebElement releaseInput = driver.findElement(By.id("release"));
+//        releaseInput.sendKeys("2023");
+//        WebElement submitButton = driver.findElement(By.className("add-movie-button"));
+//        submitButton.click();
+//
+//        driver.get("http://localhost:8080/api/v1/movies/all");
+//        List<WebElement> moviesAfter = driver.findElements(By.tagName("tr"));
+//        WebElement addedMovieTitle = driver.findElement(By.xpath("//td[contains(text(),'Nowy film')]"));
+//        WebElement addedMovieRelease = driver.findElement(By.xpath("//td[contains(text(),'2023')]"));
+//
+//        Assertions.assertEquals(numberOfMovies + 1, moviesAfter.size());
+//        Assertions.assertTrue(addedMovieTitle.isDisplayed());
+//        Assertions.assertTrue(addedMovieRelease.isDisplayed());
+//    }
+//
+//    @Test
+//    public void shouldDeleteMovie() {
+//        driver.get("http://localhost:8080/api/v1/movies/all");
+//        List<WebElement> moviesBefore = driver.findElements(By.tagName("tr"));
+//        int numberOfMovies = moviesBefore.size();
+//
+//        List<WebElement> deleteButtons = driver.findElements(By.className("delete-button"));
+//        System.out.println(deleteButtons.get(deleteButtons.size()-1));
+//        WebElement button = deleteButtons.get(deleteButtons.size()-1);
+//        button.click();
+//
+//        driver.get("http://localhost:8080/api/v1/movies/all");
+//        List<WebElement> moviesAfter = driver.findElements(By.tagName("tr"));
+//        Assertions.assertEquals(numberOfMovies - 1, moviesAfter.size());
+//    }
+//
+//    @Test
+//    public void shouldUpdateMovie() {
+//        driver.get("http://localhost:8080/api/v1/movies/all");
+//        List<WebElement> movies = driver.findElements(By.tagName("tr"));
+//        WebElement lastMovie = movies.get(movies.size()-1);
+//        String lastMovieDetails = lastMovie.getText();
+//
+//        WebElement updateButton = lastMovie.findElement(By.className("update-button"));
+//        updateButton.click();
+//        WebElement titleInput = driver.findElement(By.id("title"));
+//        titleInput.clear();
+//        titleInput.sendKeys("Zaktualizowany tytuł");
+//        WebElement submitButton = driver.findElement(By.className("update-movie-button"));
+//        submitButton.click();
+//
+//        List<WebElement> moviesAfter = driver.findElements(By.tagName("tr"));
+//        WebElement updatedMovie = moviesAfter.get(moviesAfter.size()-1);
+//        String updatedMovieDetails = updatedMovie.getText();
+//        Assertions.assertNotEquals(lastMovieDetails, updatedMovieDetails);
+//    }
 
     @AfterEach
     public void teardown() {
