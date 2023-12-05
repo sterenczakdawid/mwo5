@@ -20,8 +20,8 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v3
         with:
-          java-version: '19'
+          java-version: '17'
           distribution: 'adopt'
 
       - name: Build with Maven and run tests
-        run: mvn clean install
+        run: mvn clean package
