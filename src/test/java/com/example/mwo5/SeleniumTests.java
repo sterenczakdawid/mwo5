@@ -22,17 +22,17 @@ public class SeleniumTests {
 
     WebDriver driver;
 
-//    @BeforeAll
-//    static void setupAll() {
-//        WebDriverManager.chromedriver().setup();
-//    }
-//
-//    @BeforeEach
-//    void setup() {
-//        driver = new ChromeDriver();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-//        driver.get("http://localhost:8080/api/v1/movies/all");
-//    }
+    @BeforeAll
+    static void setupAll() {
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeEach
+    void setup() {
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+        driver.get("http://localhost:8080/api/v1/movies/all");
+    }
 
 //    @AfterEach
 //    void teardown() {
@@ -40,17 +40,17 @@ public class SeleniumTests {
 //    }
 
 
-    @BeforeClass
-    public static void init(){
-        WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeEach
-    public void setupAll() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-    }
+//    @BeforeClass
+//    public static void init(){
+//        WebDriverManager.chromedriver().setup();
+//    }
+//
+//    @BeforeEach
+//    public void setupAll() {
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+//    }
 
     @Test
     public void shouldFail(){
