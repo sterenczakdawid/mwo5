@@ -1,0 +1,27 @@
+name: mwo5
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java version
+        uses: actions/setup-java@v3
+        with:
+          java-version: '19'
+          distribution: 'adopt'
+
+      - name: Build with Maven and run tests
+        run: mvn clean install
