@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,14 +23,14 @@ public class SeleniumTests {
 
     WebDriver driver;
 
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
+//    @BeforeAll
+//    static void setupAll() {
+//        WebDriverManager.chromedriver().setup();
+//    }
 
     @BeforeEach
     void setup() {
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
         driver.get("http://localhost:8080/api/v1/movies/all");
     }
