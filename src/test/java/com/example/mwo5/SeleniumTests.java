@@ -27,34 +27,25 @@ public class SeleniumTests {
     public WebDriver driver;
 
 
-    @Before
-    public void startBrowser() {
+
+
+
+    @BeforeAll
+    static void setupAll() {
+//        WebDriverManager.chromedriver().setup();
+//        l
         WebDriverManager.firefoxdriver().setup();
+    }
+    @BeforeEach
+    void setup() {
         driver = new FirefoxDriver();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
     }
 
     @Test
     public void navigateToUrl() {
         driver.get("http://demo.guru99.com/selenium/guru99home/");
     }
-
-    @AfterEach
-    public void endTest() {
-        driver.quit();
-    }
-
-//    @BeforeAll
-//    static void setupAll() {
-////        WebDriverManager.chromedriver().setup();
-////        l
-//        System.setProperty("webdriver.gecko.driver","\"C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe\"");
-//    }
-//    @BeforeEach
-//    void setup() {
-//        driver = new FirefoxDriver();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-//        driver.get("http://localhost:8080/api/v1/movies/all");
-//    }
 
 //    @AfterEach
 //    void teardown() {
