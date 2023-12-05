@@ -23,11 +23,11 @@ public class SeleniumTests {
 
     WebDriver driver;
 
-//    @BeforeAll
-//    static void setupAll() {
+    @BeforeAll
+    static void setupAll() {
 //        WebDriverManager.chromedriver().setup();
-//    }
-
+        System.setProperty("webdriver.gecko.driver","C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe");
+    }
     @BeforeEach
     void setup() {
         driver = new FirefoxDriver();
