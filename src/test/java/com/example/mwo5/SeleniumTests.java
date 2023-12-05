@@ -40,19 +40,17 @@ public class SeleniumTests {
 //    }
 
 
-//    @BeforeClass
-//    public static void init(){
-//        WebDriverManager.chromedriver().setup();
-//    }
-//
-//    @BeforeEach
-//    public void setupAll() {
-//        driver = new ChromeDriver();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.urlContains("http://localhost:8080/api/v1/movies/all"));
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-//    }
+    @BeforeClass
+    public static void init(){
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeEach
+    public void setupAll() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+    }
 
     @Test
     public void shouldFail(){
@@ -129,10 +127,10 @@ public class SeleniumTests {
 //        Assertions.assertNotEquals(lastMovieDetails, updatedMovieDetails);
 //    }
 
-//    @AfterEach
-//    public void teardown() {
-//        driver.quit();
-//    }
+    @AfterEach
+    public void teardown() {
+        driver.quit();
+    }
 
 
 
