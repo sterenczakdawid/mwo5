@@ -27,11 +27,10 @@ public class SeleniumTests {
     public WebDriver driver;
 
 
-    @Before
+    @BeforeEach
     public void startBrowser() {
-        System.setProperty("webdriver.gecko.driver", "\"C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe\"");
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Dawid\\Downloads\\geckodriver-v0.33.0-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
-
     }
 
     @Test
@@ -39,7 +38,7 @@ public class SeleniumTests {
         driver.get("http://demo.guru99.com/selenium/guru99home/");
     }
 
-    @After
+    @AfterEach
     public void endTest() {
         driver.quit();
     }
