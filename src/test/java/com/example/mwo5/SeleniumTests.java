@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.time.Duration;
 import java.util.List;
 
 @SpringBootTest
@@ -24,6 +25,7 @@ public class SeleniumTests {
     @BeforeEach
     void setup() {
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
         driver.get("http://localhost:8080/api/v1/movies/all");
     }
 
