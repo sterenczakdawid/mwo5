@@ -27,9 +27,6 @@ public class SeleniumTests {
     public WebDriver driver;
 
 
-
-
-
     @BeforeAll
     static void setupAll() {
 //        WebDriverManager.chromedriver().setup();
@@ -47,10 +44,10 @@ public class SeleniumTests {
 //        driver.get("http://demo.guru99.com/selenium/guru99home/");
 //    }
 
-//    @AfterEach
-//    void teardown() {
-//        driver.quit();
-//    }
+    @AfterEach
+    void teardown() {
+        driver.quit();
+    }
 
 
 //    @BeforeClass
