@@ -14,6 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 @SpringBootTest
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class SeleniumTests {
 
     WebDriver driver;
