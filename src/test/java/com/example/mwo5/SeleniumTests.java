@@ -24,7 +24,9 @@ public class SeleniumTests {
 
     @BeforeEach
     void setup() {
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        driver = new ChromeDriver(chromeOptions);
     }
 
     @AfterEach
