@@ -141,3 +141,7 @@ Aby testy nie przechodziły dodaję test:
 Pokaz zgłaszania błędu w Azure:
 
 
+
+https://github.com/sterenczakdawid/mwo5/assets/104166628/e0035aef-5ff9-4995-bd94-3141960990ff
+
+
