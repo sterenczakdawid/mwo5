@@ -34,11 +34,11 @@ public class SeleniumTests {
 
     @BeforeEach
     void setup() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless"); // Dodaj opcję headless
-
-        driver = new ChromeDriver(chromeOptions);
-//        driver = new ChromeDriver();
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--headless"); // Dodaj opcję headless
+//
+//        driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver();
     }
 
     @AfterEach
