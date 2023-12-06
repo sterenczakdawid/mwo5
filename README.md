@@ -65,19 +65,20 @@ Konfiguracja testów (opcja headless pozwala uruchomić testy w środowisku GitH
 ```
 
 ### Film prezentujący pomyślny przebieg testów
-<video width="640" height="360" controls>
-  <source src="assets/tests.mp4" type="video/mp4">
-</video>
+
 
 ---
 ## Azure i GitHub Actions
-Personal access token w azure:
+Personal access token w azure: 
+
 ![AzurePAT](assets/azure_pat.png)
 
 Github:
+
 ![GithubToken](assets/ghtoken.png)
 
 Sekrety:
+
 ![Secrets](assets/secrets.png)
 
 Pipeline:
