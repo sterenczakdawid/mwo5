@@ -1,13 +1,11 @@
 # MWO - Projekt
 
----
 ## Aplikacja
 Testowana aplikacja to prosta aplikacja webowa Java Spring Boot
 zawierająca podstawowe operacje CRUD na filmach.
 
 ![Aplikacja](assets/app.png)
 
----
 
 ## Testy
 Do napisania testów została wykorzystana biblioteka Selenium ( Selenium Webdriver ) oraz JUnit.
@@ -67,7 +65,6 @@ Konfiguracja testów (opcja headless pozwala uruchomić testy w środowisku GitH
 ### Film prezentujący pomyślny przebieg testów
 
 
----
 ## Azure i GitHub Actions
 Personal access token w azure: 
 
@@ -126,7 +123,6 @@ jobs:
           GithubToken: ${{ secrets.GH_PAT}}
 ```
 
----
 ## Pokaz działania
 Aby testy nie przechodziły dodaję test:
 ```
