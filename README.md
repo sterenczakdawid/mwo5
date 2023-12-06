@@ -13,7 +13,7 @@ Dodatkowo została wykorzystana biblioteka AssertJ oraz Faker do wygenerowania d
 
 Konfiguracja testów (opcja headless pozwala uruchomić testy w środowisku GitHub Actions):
 
-```
+```java
     public WebDriver driver;
 
     @BeforeAll
@@ -35,7 +35,7 @@ Konfiguracja testów (opcja headless pozwala uruchomić testy w środowisku GitH
 ```
 
 ### Przykładowe napisane testy
-```
+```java
     @Test
     public void shouldGetMoviesList() {
         driver.get("http://localhost:8080/api/v1/movies/all");
@@ -85,7 +85,7 @@ Sekrety:
 ![Secrets](assets/secrets.png)
 
 Pipeline:
-```
+```yaml
 name: Java Selenium
 
 on:
@@ -131,7 +131,7 @@ jobs:
 
 ## Pokaz działania
 Aby testy nie przechodziły dodaję test:
-```
+```java
     @Test
     public void shouldNotPass() {
         Assertions.fail();
