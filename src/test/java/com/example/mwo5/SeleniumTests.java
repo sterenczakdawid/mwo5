@@ -38,6 +38,7 @@ public class SeleniumTests {
         chromeOptions.addArguments("--headless"); // Dodaj opcję headless
 
         driver = new ChromeDriver(chromeOptions);
+//        driver = new ChromeDriver();
     }
 
     @AfterEach
