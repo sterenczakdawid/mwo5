@@ -65,6 +65,10 @@ Konfiguracja testów (opcja headless pozwala uruchomić testy w środowisku GitH
 ### Film prezentujący pomyślny przebieg testów
 
 
+https://github.com/sterenczakdawid/mwo5/assets/104166628/ceecde78-88a3-4c70-a10b-c37b6761a64b
+
+
+
 ## Azure i GitHub Actions
 Personal access token w azure: 
 
