@@ -43,8 +43,8 @@ public class SeleniumTests {
     }
 
     @Test
-    public void shouldFail(){
-        Assertions.assertEquals(10,10);
+    public void shouldNotPass() {
+        Assertions.fail();
     }
 
     @Test

@@ -1,18 +1,17 @@
-name: Java CI with Maven
+name: Java Selenium
 
 on:
   push:
     branches:
-      - '*'
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      chrome:
-        image: selenium/standalone-chrome-debug:latest
-        ports:
-          - 4444:4444
 
     steps:
       - uses: actions/checkout@v3
@@ -28,3 +27,18 @@ jobs:
 
       - name: Run tests
         run: mvn test
+
+      - name: Tests failed - create item in Azure
+        uses: stefanstranger/azuredevops-bug-action@1.1
+        if: failure()
+        with:
+          OrganizationName: "mwo-sterencd"
+          PAT: "PAT"
+          ProjectName: "mwo test"
+          AreaPath: "mwo test"
+          IterationPath: "mwo test"
+          GithubToken: "GithubToken"
+          WorkflowFileName: "main.yml"
+        env:
+          PAT: ${{ secrets.AZURE_PAT}}
+          GithubToken: ${{ secrets.GH_PAT}}
