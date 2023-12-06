@@ -34,12 +34,7 @@ public class SeleniumTests {
 
     @BeforeEach
     void setup() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--headless"); // Dodaj opcję headless
-        chromeOptions.addArguments("--no-sandbox", "--disable-dev-shm-usage");
-//
-        driver = new ChromeDriver(chromeOptions);
-//        driver = new ChromeDriver();
+        driver = new ChromeDriver();
     }
 
     @AfterEach
